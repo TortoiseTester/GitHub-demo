@@ -25,12 +25,6 @@ import Security
 import threading
 import squish
 
-from Client.remote_client import FatalError, StopCaseError, AnalyzerLogThread
-from Components.log_folder_transfer import LogFolderTransfer
-from Components.remote_target import RemoteTarget 
-
-PAS_CONFIG_PATH = "C:\Ford_Automation_Gen3\Shared\scripts\Sync3EventAnalyzer\Client\handle_fatal_event.json"
-TC_LOG_PATH = r"C:\temp"
      
 def precondition():
     testSettings.logScreenshotOnError = True
@@ -182,7 +176,7 @@ def handleLogFatalEvent(analyzer_thread, target_log_dest):
     log_transfer.download_log_folder(dest=target_log_dest)
     test.log("Sync3EventAnalyzer Copy target logs finished!")    
     
-    test.log("Sync3EventAnalyzer Reset SYNC for environment cleanup!\n") 
+    test.log("Sync3EventAnalyzer Reset SYNC for environment cleanup!------done finished\n") 
     _reset_environment(analyzer_thread) 
     
 def _reset_environment(analyzer_thread):
